@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" >
+    <link href="assets/css/radio.css" rel="stylesheet" >
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <title>Arcane</title>
+</head>
+<body>
+    <div class="header">
+    <!--Content before waves-->
+    <img src="assets/img/logo.svg" class="logo" alt="logo">
+    <div class="inner-header">
+        <h1>ARCANE WALLET</h1><p>Safe passage into the world of cryptocurrency. Economical and user-friendly bitcoin wallet.</p>
+    </div>
+    <div>
+    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+    <defs>
+    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+    </defs>
+    <g class="parallax">
+    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+    <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+    </g>
+    </svg>
+    </div>
+    </div>
+    <div class="content flex">
+        <!-- Create Button trigger modal -->
+            <button type="button" class="button" data-bs-toggle="modal" data-bs-target="#createwallet">
+              Create
+            </button>
+        <!-- Restore Button trigger modal -->
+            <button type="button" class="button1" data-bs-toggle="modal" data-bs-target="#Restorewallet">
+              Restore
+            </button>
+        <!-- modal Boxes start -->
+            <!--  Create wallet Modal -->
+            <div class="modal fade" id="createwallet" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="createwalletLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <b><h2 class="modal-title" id="createwalletLabel">Create Wallet</h2></b>
+                    </div>
+                    <div class="modal-body">
+                        <label class="container">Main Net
+                        <input type="radio" id="Mnet" name="net" value="Main Net">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="container">Test Net
+                        <input type="radio" id="Tnet" name="net" value="Test Net">
+                        <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="button" data-bs-toggle="modal" data-bs-target="#walletcreated" data-bs-dismiss="modal">Create</button>
+                        <button type="button" class="button1" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <!-- Restore Modal -->
+            <div class="modal fade" id="Restorewallet" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="RestorewalletLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <b><h2 class="modal-title" id="RestorewalletLabel">Restore Wallet</h2></b>
+                    </div>
+                    <div class="modal-body">
+                        <h5>Private key:</h5>
+                        <input type="text" class="form-control" name="pvtkey" id="pvtkey" placeholder="ENTER PRIVATE KEY">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="button" data-bs-toggle="modal" data-bs-target="#Restorebalance" data-bs-dismiss="modal">Restore</button>
+                        <button type="button" class="button1" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <!-- Wallet created successfully Modal -->
+            <div class="modal fade" id="walletcreated" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="walletcreatedLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <b><h2 class="modal-title" id="walletcreatedLabel">Wallet Created Successfully</h2></b>
+                    </div>
+                    <div class="modal-body">
+                        <h5>your private key is the password to your wallet, so be sure to write it down!</h5>
+                        <input type="text" class="form-control" name="pvtkey" id="pvtkey" placeholder="ENTER PRIVATE KEY">
+                    <div class="modal-footer">
+                        <button type="button" class="button">Copy</button>
+                        <button type="button" class="button1" data-bs-toggle="modal" data-bs-target="#Restorebalance" data-bs-dismiss="modal">Done</button>
+                    </div>
+                </div>
+              </div>
+            </div>
+            </div>
+            <!-- Restore balance successfully Modal -->
+            <div class="modal fade" id="Restorebalance" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="RestorebalanceLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <b><h5 class="modal-title" id="RestorebalanceLabel"></h5></b>
+                    </div>
+                    <div class="modal-body">
+                        balance : <span id="balbtc">0</span><br/>
+                        mBTC (<span id="usd">0</span> USD)<br/>
+                        Address : <span id="address:">address</span><br/>
+                        <input type="text" class="form-control" name="pvtkey" id="pvtkey" placeholder="AMOUNT IN BTC">
+                        <input type="text" class="form-control" name="pvtkey" id="pvtkey" placeholder="RECEPIENT ADDRESS">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="button">Restore</button>
+                        <button type="button" class="button1" data-bs-dismiss="modal">close</button>
+                    </div>
+                </div>
+              </div>
+            </div>
+            </div>
+        <!-- modal Boxes end -->
+    </div>
+<script src="assets\js\bootstrap.bundle.min.js" ></script>
+</body>
+</html>

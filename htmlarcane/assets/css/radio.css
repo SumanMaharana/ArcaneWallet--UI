@@ -1,0 +1,32 @@
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 20px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  height: 22px;
+  width: 22px;
+	background-color:#eee;
+  border-radius: 50%;
+}
+/* When the radio button is checked, add a background */
+.container input:checked ~ .checkmark {
+  background-image: linear-gradient(to right, #000000 , #A9A9A9);
+}
